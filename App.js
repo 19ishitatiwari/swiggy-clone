@@ -1,29 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const element = React.createElement(
-  'div',
-  { id: 'parent' },
-  [
-    React.createElement(
-      'div',
-      { id: 'child' },
-      [
-        React.createElement('h1', {}, 'I am an h1 tag'),
-        React.createElement('h2', {}, 'I am an h2 tag'),
-      ]
-    ),
-    React.createElement(
-      'div',
-      { id: 'child2' },
-      [
-        React.createElement('h1', {}, 'I am an h1 tag'),
-        React.createElement('h2', {}, 'I am an h2 tag'),
-      ]
-    )
-  ]
-);
+const elem = <span>This is a JSX element</span>;
+const JsxHeading = () => <h1 className='jsx-heading'>Hello, World from JSX!</h1>;
+
+console.log(JsxHeading);
+
+//Component Composition
+const HeaderComponent = () => {
+    return (
+        <div>
+            <JsxHeading />
+            <JsxHeading></JsxHeading>
+            {JsxHeading()}
+            <h1 className='header-component'>This is the HeaderComponent {elem}</h1>
+        </div>
+    );
+}
 
 // Render to the root
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(element);
+root.render(<HeaderComponent />);
