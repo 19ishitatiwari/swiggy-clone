@@ -13,10 +13,8 @@
   },
   "author": "Ishita Tiwari",
   "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.15.4"
-  },
   "dependencies": {
+    "parcel": "^2.15.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
