@@ -1,7 +1,8 @@
 import { IMG_URL } from '../utils/constants';
 
 const RestaurantCard = ({resData}) => {
-    const { name, cuisines, avgRating, deliveryTime, costForTwo, cloudinaryImageId } = resData?.data;
+    const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } = resData?.info;
+    const { deliveryTime } = resData?.info?.sla;
     return (
         <>
             {/* <div className='res-card'>
@@ -19,7 +20,7 @@ const RestaurantCard = ({resData}) => {
             </div> */}
             <div className='res-card'>
                 <img className='res-logo'
-                    src={IMG_URL}
+                    src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId}
                     alt='Restaurant Logo'
                 />
                 <h2>{name}</h2>
@@ -27,7 +28,7 @@ const RestaurantCard = ({resData}) => {
                     <p>Cuisine Type: {cuisines.join(", ")}</p>
                     <p>Rating: {avgRating} ⭐</p>
                     <p>Delivery Time: {deliveryTime} mins</p>
-                    <p>Cost for Two: ₹{costForTwo/100}</p>
+                    <p>Cost: {costForTwo}</p>
                 </div>
             </div>
         </>
