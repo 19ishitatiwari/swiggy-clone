@@ -21,20 +21,29 @@
     cursor: pointer;
 }
 .res-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
-    justify-content:start;
-    margin-left: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* stretch all direct children (<a>) */
 }
+
+.res-container > a {
+  flex: 0 0 auto;
+  margin: 10px;
+  display: flex;        /* make <a> a flex container */
+  cursor: pointer;         /* restore pointer for click */
+  text-decoration: none;   /* no underline */
+  color: inherit;
+}
+
 .res-card {
-    width: 200px;
-    /* height: 350px; */
-    background-color: lemonchiffon;
-    margin:5px;
-    padding-left: 10px;
+  width: 200px;
+  background-color: lemonchiffon;
+  padding: 10px;
+  flex: 1;              /* allow card to stretch fully inside <a> */
+  display: flex;
+  flex-direction: column;
 }
+
 .shimmer-container{
     display: flex;
     flex-wrap: wrap;
