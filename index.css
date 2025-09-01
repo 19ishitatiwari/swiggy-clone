@@ -89,3 +89,8 @@
     margin: 20px 10px 0 4.5rem;
     gap: 10px
 }
+.team-member{
+    margin: 20px;
+    border: 1px solid black;
+    padding: 10px;
+}
