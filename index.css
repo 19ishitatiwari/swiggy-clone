@@ -1,4 +1,6 @@
-.logo {
+@import "tailwindcss";
+
+/* .logo {
     width: 100px;
     height: 100px;
 }
@@ -23,15 +25,15 @@
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch; /* stretch all direct children (<a>) */
+  align-items: stretch; /* stretch all direct children (<a>) 
 }
 
 .res-container > a {
   flex: 0 0 auto;
   margin: 10px;
-  display: flex;        /* make <a> a flex container */
-  cursor: pointer;         /* restore pointer for click */
-  text-decoration: none;   /* no underline */
+  display: flex;        /* make <a> a flex container 
+  cursor: pointer;         /* restore pointer for click 
+  text-decoration: none;   /* no underline 
   color: inherit;
 }
 
@@ -39,7 +41,7 @@
   width: 200px;
   background-color: lemonchiffon;
   padding: 10px;
-  flex: 1;              /* allow card to stretch fully inside <a> */
+  flex: 1;              /* allow card to stretch fully inside <a> 
   display: flex;
   flex-direction: column;
 }
@@ -67,10 +69,10 @@
     /* flex-direction: column; */
     /* display: flex; */
     /* justify-content: space-between; */
-    /* height: 100%; */
+    /* height: 100%; 
 }
 .res-card > h2 {
-    /* font-size: 20px; */
+    /* font-size: 20px; 
     margin: 5px 0;
 }
 .res-card:hover {
@@ -82,7 +84,7 @@
 .search-container {
     display: flex;
     justify-content: start;
-     /* top: 20px, right: 0, bottom: 0, left: 4.5rem */
+     /* top: 20px, right: 0, bottom: 0, left: 4.5rem 
 }
 .filter{
     display: flex;
@@ -93,4 +95,4 @@
     margin: 20px;
     border: 1px solid black;
     padding: 10px;
-}
+} */

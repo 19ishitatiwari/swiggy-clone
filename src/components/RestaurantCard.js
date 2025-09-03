@@ -5,30 +5,17 @@ const RestaurantCard = ({resData}) => {
     const { deliveryTime } = resData?.info?.sla;
     return (
         <>
-            {/* <div className='res-card'>
-                <img className='res-logo'
-                    src='https://ooni.com/cdn/shop/articles/20220211142347-margherita-9920_ba86be55-674e-4f35-8094-2067ab41a671.jpg'
-                    alt='Restaurant Logo'
-                />
-                <h2>La Pino'z</h2>
-                <div className='res-details'>
-                    <p>Cuisine Type: Italian</p>
-                    <p>Rating: 4.5 ⭐</p>
-                    <p>Delivery Time: 30 mins</p>
-                    <p>Cost for Two: Rs. 500</p>
-                </div>
-            </div> */}
-            <div className='res-card'>
-                <img className='res-logo'
+            <div className='m-4 p-4 w-[250px] h-[550px] bg-amber-100 cursor-pointer shadow-lg rounded-lg transform transition-transform duration-300 hover:scale-105'>
+                <img className='res-logo rounded-md'
                     src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId}
                     alt='Restaurant Logo'
                 />
-                <h2>{name}</h2>
-                <div className='res-details'>
-                    <p>Cuisine Type: {cuisines.join(", ")}</p>
-                    <p>Rating: {avgRating} ⭐</p>
-                    <p>Delivery Time: {deliveryTime} mins</p>
-                    <p>Cost: {costForTwo}</p>
+                <h2 className='font-bold py-4 text-lg'>{name}</h2>
+                <div className='res-details text-md mt-auto'>
+                    <p>Cuisine: {cuisines.join(", ")}</p>
+                    <p>⭐ {avgRating}</p>
+                    <p>⏱ {deliveryTime} mins</p>
+                    <p>💰 {costForTwo}</p>
                 </div>
             </div>
         </>

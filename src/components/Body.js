@@ -29,17 +29,17 @@ const Body = () => {
 
     return (
         <div className='body'>
-            <div className='filter'>
-                <div className='search-container'>
+            <div className='filter flex'>
+                <div className='search-container m-2 p-4'>
                     <input 
                         type='text' 
-                        className='search-input' 
+                        className='border border-solid border-black' 
                         placeholder='Search for ...'
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}
                     />
                     <button 
-                        className='search-button'
+                        className='ml-4 px-3 py-1 bg-orange-100 cursor-pointer rounded-sm'
                         onClick={() => {
                             const filteredList = allRestaurants.filter((res) =>
                                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -48,9 +48,9 @@ const Body = () => {
                         }}
                     >Search</button>
                 </div>
-                <div className="top-rated">
+                <div className="top-rated flex items-center">
                     <button 
-                        className="top-rated-button"
+                        className="px-3 py-1 bg-orange-100 cursor-pointer rounded-sm"
                         onClick={() => {
                             const filteredList = allRestaurants.filter(
                                 (res) => res.info.avgRating > 4.3
@@ -60,7 +60,7 @@ const Body = () => {
                     >Top Rated</button>
                 </div>
             </div>
-            <div className='res-container'>
+            <div className='res-container flex flex-wrap'>
                 {allRestaurants.length === 0 ? <Shimmer /> : 
                     data.map((restaurant) => (
                         <Link to={'/restaurant/' + restaurant.info.id} key={restaurant.info.id}>
