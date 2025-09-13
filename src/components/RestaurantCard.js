@@ -22,4 +22,15 @@ const RestaurantCard = ({resData}) => {
     )
 }
 
+export const PopularRestaurantCard = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className='absolute p-2 m-2 bg-black text-white rounded-lg z-1'>Popular</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+}
+
 export default RestaurantCard;
