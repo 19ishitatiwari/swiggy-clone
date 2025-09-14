@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
 
 const ItemList = ({data}) => {
     const [imgErrors, setImgErrors] = useState({}); // track errors by index
@@ -6,6 +8,19 @@ const ItemList = ({data}) => {
     const handleImgError = (index) => {
         setImgErrors((prev) => ({ ...prev, [index]: true }));
     };
+
+    const cartItems = useSelector((store) => store.cart.items);
+     
+    const dispatch = useDispatch();
+    
+    const handleAddItem = (item) => {
+        const isInCart = cartItems.some(cartItem => cartItem.card.info.id === item.card.info.id);
+        if(isInCart){
+            dispatch(removeItem(item));
+        } else {
+            dispatch(addItem(item));
+        }
+    }
 
   return (
     <div>
@@ -33,8 +48,8 @@ const ItemList = ({data}) => {
                         onError={() => handleImgError(index)}
                         />
                     )}
-                    <button className="absolute bottom-2 right-2 bg-orange-500 text-white px-3 py-1 rounded-md shadow-md cursor-pointer">
-                        Add +
+                    <button className="absolute bottom-2 right-2 bg-orange-500 text-white px-3 py-1 rounded-md shadow-md cursor-pointer" onClick={() => {handleAddItem(item)}}>
+                        { cartItems.some(cartItem => cartItem.card.info.id === item.card.info.id) ? "Remove" : "Add +" }
                     </button>
                 </div>
             </div>
