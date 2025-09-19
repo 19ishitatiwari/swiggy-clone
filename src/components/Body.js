@@ -37,6 +37,7 @@ const Body = () => {
             <div className='filter flex'>
                 <div className='search-container m-2 p-4'>
                     <input 
+                        data-testid="search-input"
                         type='text' 
                         className='border border-solid border-black' 
                         placeholder='Search for ...'
@@ -70,7 +71,7 @@ const Body = () => {
                 </div>
             </div>
             <div className='res-container flex flex-wrap'>
-                {allRestaurants.length === 0 ? <Shimmer /> : 
+                {allRestaurants?.length === 0 ? <Shimmer /> : 
                     data.map((restaurant) => (
                         <Link to={'/restaurant/' + restaurant.info.id} key={restaurant.info.id}>
                             {restaurant.info.avgRating > 4.3 ? <PopularCard resData={restaurant} /> : <RestaurantCard resData={restaurant} /> }

@@ -25,7 +25,7 @@ const ItemList = ({data}) => {
   return (
     <div>
           {data.map((item, index) => (
-            <div key={item.card.info.id} 
+            <div key={item.card.info.id} data-testid="foodItem"
             className={`flex justify-between py-2 
             ${index !== data.length - 1 ? "border-b-2 border-gray-100 my-2" : "mb-2"}`}>
                 <div className="w-9/12">
@@ -48,7 +48,7 @@ const ItemList = ({data}) => {
                         onError={() => handleImgError(index)}
                         />
                     )}
-                    <button className="absolute bottom-2 right-2 bg-orange-500 text-white px-3 py-1 rounded-md shadow-md cursor-pointer" onClick={() => {handleAddItem(item)}}>
+                    <button data-testid="addButton" className="absolute bottom-2 right-2 bg-orange-500 text-white px-3 py-1 rounded-md shadow-md cursor-pointer" onClick={() => {handleAddItem(item)}}>
                         { cartItems.some(cartItem => cartItem.card.info.id === item.card.info.id) ? "Remove" : "Add +" }
                     </button>
                 </div>

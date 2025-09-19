@@ -15,8 +15,6 @@ const Header = () => {
 
     const cartItems = useSelector((store) => store.cart.items);
 
-    console.log(cartItems);
-
     return (
         <div className='flex justify-between shadow-lg m-2 p-2'>
             <div className='logo-container'>
@@ -35,12 +33,20 @@ const Header = () => {
                     <li className='px-4'><Link to={'/contact'}>Contact </Link></li>
                     <li className="px-4"><Link to={'/grocery'}>Grocery Mart</Link></li>
                     <li className='px-4'><Link to={'/cart'}>Cart - ({cartItems.length} items)</Link></li>
-                    <li 
+                    {/* <li 
+                        aria-label="Login"
                         className='px-4 cursor-pointer'
                         onClick={() => {
                             btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
                         }}
-                        >{btnName}</li>
+                        >{btnName}</li> */}
+                        <li>
+                            <button 
+                                className="px-4 cursor-pointer" 
+                                onClick={() => {
+                                    btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
+                                }}>{btnName}</button>
+                        </li>
                     <li className='px-4'>{loggedInUser}</li>
                 </ul>
             </div>
